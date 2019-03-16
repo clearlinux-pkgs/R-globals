@@ -4,7 +4,7 @@
 #
 Name     : R-globals
 Version  : 0.12.4
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/globals_0.12.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/globals_0.12.4.tar.gz
 Summary  : Identify Global Objects in R Expressions
@@ -26,11 +26,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539311229
+export SOURCE_DATE_EPOCH=1552763463
 
 %install
+export SOURCE_DATE_EPOCH=1552763463
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1539311229
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -65,8 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library globals|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  globals || :
 
 
 %files
@@ -92,3 +91,12 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/globals/help/paths.rds
 /usr/lib64/R/library/globals/html/00Index.html
 /usr/lib64/R/library/globals/html/R.css
+/usr/lib64/R/library/globals/tests/Globals.R
+/usr/lib64/R/library/globals/tests/conservative.R
+/usr/lib64/R/library/globals/tests/dotdotdot.R
+/usr/lib64/R/library/globals/tests/formulas.R
+/usr/lib64/R/library/globals/tests/globalsOf.R
+/usr/lib64/R/library/globals/tests/liberal.R
+/usr/lib64/R/library/globals/tests/utils.R
+/usr/lib64/R/library/globals/tests/walkAST.R
+/usr/lib64/R/library/globals/tests/zzz.R
