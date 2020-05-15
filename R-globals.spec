@@ -4,7 +4,7 @@
 #
 Name     : R-globals
 Version  : 0.12.5
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/globals_0.12.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/globals_0.12.5.tar.gz
 Summary  : Identify Global Objects in R Expressions
@@ -20,21 +20,22 @@ by code inspection using various strategies, e.g. conservative or liberal.
 
 %prep
 %setup -q -c -n globals
+cd %{_builddir}/globals
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575905906
+export SOURCE_DATE_EPOCH=1589511414
 
 %install
-export SOURCE_DATE_EPOCH=1575905906
+export SOURCE_DATE_EPOCH=1589511414
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
