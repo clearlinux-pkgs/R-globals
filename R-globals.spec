@@ -4,7 +4,7 @@
 #
 Name     : R-globals
 Version  : 0.16.2
-Release  : 51
+Release  : 52
 URL      : https://cran.r-project.org/src/contrib/globals_0.16.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/globals_0.16.2.tar.gz
 Summary  : Identify Global Objects in R Expressions
